@@ -1,11 +1,5 @@
 {
     var shadowRoot;
-    var href;
-    const update = new Event('update', {
-        bubbles: true,
-        composed: true,
-        detail: ""
-    });
     const template = document.createElement('template');
     template.innerHTML = `
         <link rel="stylesheet" href="css/global.css">
@@ -75,11 +69,11 @@
     class Navbutton extends HTMLElement {
         constructor() {
             super();
-            href = this.getAttribute('href');
+            const href = this.getAttribute('href');
             let content = template.content.cloneNode(true);
             shadowRoot = this.attachShadow({ mode: "open" }).appendChild(content);
             this.setAttribute("tabindex", "0");
-            update.detail = href;
+
             this.addEventListener('click', e => {
                 if (this.disabled) {
                     return;
@@ -89,7 +83,7 @@
                         elements[i].disabled = false;
                     }
                     this.disabled = true;
-                    this.dispatchEvent(update);
+                    window.open(href, "_self");
                 }
             })
         }

@@ -9,7 +9,6 @@ function include(file) {
 
 }
 
-include('link/link.js');
 include('navbar/navbar.js');
 include('navbar/navbutton.js');
 include('block/block.js');
