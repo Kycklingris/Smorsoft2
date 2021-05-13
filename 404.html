@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404</title>
+</head>
+<body>
+    <p>Something went wrong</p>
+    
+</body>
+</html>
+
+<script>
+var stringToHTML = function (str) {
+    var parser = new DOMParser();
+    var doc = parser.parseFromString(str, 'text/html');
+    return doc.body;
+}
+function load(text, url) {
+    let content = stringToHTML(text).querySelector('#content');
+    document.querySelector("#content").innerHTML = content.innerHTML;
+    let newurl = url.replace(".html", "");
+    history.pushState(null, null, newurl);
+}
+function loadindex(text, url) {
+    let content = stringToHTML(text);
+    document.write(content);
+    let newurl = url.replace(".html", "");
+    history.replaceState(null, null, newurl);
+
+    alert("rawr")
+}
+function reload(e) { 
+    fetch(e)
+        .then(function (response) {
+            return response.text();
+        }).then(function (html) {
+            loadindex(html, e);
+        }).catch(function (err) {
+            console.warn("Couldn't load html", err);
+        });
+}
+
+    window.onload = function () {
+        let url = document.URL.replace(".html", "");
+        let split = url.split("#");
+        let suburls = split[0].split("/");
+        let path = suburls.slice(3, suburls.length-1).join("/");
+        let basepath = suburls.slice(0,3).join("/");
+
+        fetch(basepath)
+            .then(function (response) {
+                return response.text();
+            }).then(function (html) {
+                load
+            })
+
+        if(split.length === 2) {
+
+        }
+        
+    };
+    </script>

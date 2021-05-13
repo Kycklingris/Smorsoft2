@@ -2,18 +2,18 @@
 <html lang="en">
 <head>
     <script src = "components/include.js"></script>
+    <script src = "loading.js"></script>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Smorsoft</title>
     <link rel="stylesheet" href="css/global.css">
+    <link rel="icon" type="image/svg+xml" href="./components/logo-text.svg">
 </head>
 <body>
     <nav-bar></nav-bar>
     <div id = "content">
-        <content-block title = "Gurka.">
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores perspiciatis a, iusto vero quae ex aliquid velit reprehenderit doloremque quia, quam quibusdam? Recusandae animi iusto laudantium, ex quaerat modi laborum.
-        </content-block>
+        
     </div>
 </body>
 </html>
@@ -23,26 +23,4 @@
 </style>
 
 <script>
-    const legacy = false;
-    function reload(e) {
-        var stringToHTML = function (str) {
-            var parser = new DOMParser();
-            var doc = parser.parseFromString(str, 'text/html');
-            return doc.body;
-        };
-        function load(text) {
-            let content = stringToHTML(text).querySelector('#content');
-            document.querySelector("#content").innerHTML = content.innerHTML;
-        }
-        fetch(e.detail)
-            .then(function (response) {
-                return response.text();
-            }).then(function (html) {
-                load(html);
-            }).catch(function (err) {
-                console.warn("Couldn't load html", err);
-                legacy = true;
-            });
-    }
-document.addEventListener('update', reload);
 </script>
