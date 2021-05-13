@@ -2,15 +2,15 @@
     const template = document.createElement("template");
     template.innerHTML = `
     <link rel="stylesheet" href="css/global.css">
-    <script src = "./Navbutton.js"></script>
+    <script src = "/Navbutton.js"></script>
     <div id = "wrapper">
         <div id = "title">
             <object id = "logo" data="components/logo.svg" type="image/svg+xml"></object>
             <h3>Smorsoft</h3>
         </div>
         <div id = "links">
-            <nav-button href = "./pages/games">Games</nav-button>
-            <nav-button href = "./b">B</nav-button>
+            <nav-button href = "/pages/games">Games</nav-button>
+            <nav-button href = "/b">B</nav-button>
         </div>
     </div>
 
