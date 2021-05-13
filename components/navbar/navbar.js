@@ -4,13 +4,16 @@
     <link rel="stylesheet" href="css/global.css">
     <script src = "/Navbutton.js"></script>
     <div id = "wrapper">
-        <div id = "title">
+        <a id = "title" href = "/">
             <object id = "logo" data="components/logo.svg" type="image/svg+xml"></object>
             <h3>Smorsoft</h3>
-        </div>
+        </a>
         <div id = "links">
             <nav-button href = "/pages/games">Games</nav-button>
             <nav-button href = "/b">B</nav-button>
+            <button>
+            <span class="material-icons-outlined">search</span>
+            </button>
         </div>
     </div>
 
@@ -36,6 +39,9 @@
             overflow-wrap: break-word;
             line-height:0.8;
             padding-left:0.5em;
+        }
+        #title {
+            text-decoration:none;
         }
         #logo {
             width:5em;

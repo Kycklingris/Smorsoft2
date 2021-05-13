@@ -86,6 +86,14 @@
                     window.open(href, "_self");
                 }
             })
+
+            // Set disabled
+            let url = window.URL.split("/").slice(3).join("/");
+            console.log(url);
+            console.log(href);
+            if (url == href) {
+                this.disabled = true;
+            }
         }
 
         get disabled() {
