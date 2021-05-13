@@ -1,0 +1,38 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Da+2&family=Overpass&family=Source+Code+Pro:ital,wght@0,200;0,400;1,200;1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Domine&family=Miriam+Libre&family=Palanquin&display=swap');
+
+html {
+  --accent: #bd125b;
+  --accent2: #9b114c;
+  --accent3: #79103d;
+  --accent4: #570f2f;
+  --black: #15141c;
+  --thickness: 1.5px;
+  
+  --font: font-family: 'Domine', serif;
+  --font2: font-family: 'Palanquin', sans-serif;
+  --font3: font-family: 'Miriam Libre', sans-serif;
+
+  --text: rgb(206, 206, 206);
+  --highlight: 0.6;
+
+  --title: rgb(209, 209, 209);
+}
+body {
+  background-color: var(--accent4);
+  overflow-x:hidden;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  background-color:transparent;
+  color:var(--text);
+  position:relative;
+  font-family: var(--font),
+}
+
+h2 {
+  font-family: var(--font2);
+  font-size: 1.75em;
+}
