@@ -3,6 +3,7 @@
     const template = document.createElement('template');
     template.innerHTML = `
         <link rel="stylesheet" href="css/global.css">
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
         <div id = "wrapper">
             <h2 id = "text"><slot></slot></h2>
             <div id = "bar"></div>
@@ -43,6 +44,8 @@
                 -moz-user-select: none;     /* Firefox all */
                 -ms-user-select: none;      /* IE 10+ */
                 user-select: none;          /* Likely future */
+
+                cursor: pointer;
             }
 
             #wrapper * {
@@ -88,9 +91,7 @@
             })
 
             // Set disabled
-            let url = window.URL.split("/").slice(3).join("/");
-            console.log(url);
-            console.log(href);
+            let url = window.location.pathname;
             if (url == href) {
                 this.disabled = true;
             }

@@ -2,17 +2,19 @@
     const template = document.createElement("template");
     template.innerHTML = `
     <link rel="stylesheet" href="css/global.css">
-    <script src = "/Navbutton.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <div id = "wrapper">
         <a id = "title" href = "/">
-            <object id = "logo" data="components/logo.svg" type="image/svg+xml"></object>
+            <img id = "logo" src="components/logo.svg">
             <h3>Smorsoft</h3>
         </a>
         <div id = "links">
-            <nav-button href = "/pages/games">Games</nav-button>
-            <nav-button href = "/b">B</nav-button>
-            <button>
-            <span class="material-icons-outlined">search</span>
+            <nav-button class = "link" href = "/pages/games">Games</nav-button>
+            <nav-button class = "link" href = "/b">B</nav-button>
+            <button id = "menu">
+            <span class="material-icons md-48">
+            menu
+            </span>
             </button>
         </div>
     </div>
@@ -46,6 +48,22 @@
         #logo {
             width:5em;
         }
+        #menu {
+            display:none;
+        }
+        @media all and (max-width: 960px) {
+            #menu{
+                display:block;
+                cursor:pointer;
+                width:4em;
+                border:none;
+            }
+
+            .link {
+                display:none;
+            }
+        }
+
     </style>
     `
     class Navbar extends HTMLElement {
