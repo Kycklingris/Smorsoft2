@@ -9,7 +9,7 @@
             <h3>Smorsoft</h3>
         </a>
         <div id = "links">
-            <nav-button class = "link" href = "/pages/games/">Games</nav-button>
+            <nav-button class = "link" href = "/pages/games/games.html">Games</nav-button>
             <nav-button class = "link" href = "https://www.google.com/">B</nav-button>
             <button id = "menu">
             <span class="material-icons md-48">
